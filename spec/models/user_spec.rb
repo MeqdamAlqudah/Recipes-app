@@ -1,10 +1,5 @@
 require 'rails_helper'
 
-# user name must be present
-# user must be a string
-# user must have many recipes
-# user must have many foot items
-
 RSpec.describe User, type: :model do
   let(:user) { create(:user) }
   describe 'Attributes' do
