@@ -2,22 +2,32 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item btn btn-light">
-          Home
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "btn btn-light" %>
         </li>
       </ul>
       <div class="d-flex flex-row">
-        <ul>
-          <li class="btn btn-dark">Sign up</li>
-          <li class="btn btn-light">Sign in</li>
-        </ul>
+      <% if user_signed_in? %>
         <div class="nav-item dropdown">
           <span class="nav-link dropdown-toggle text-dark" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</span>
           <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
             <li>Foods</li>
             <li>Recipes</li>
+            <li>
+              <%= button_to "Sign out", destroy_user_session_path, class: "text-danger", method: :delete %>
+            </li>
           </ul>
         </div>
+      <% else %>
+        <ul class="d-flex flex-row gap-3 list-unstyled">
+          <li>
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-dark" %>
+          </li>
+          <li>
+            <%= link_to "Sign in", user_session_path, class: "btn btn-light" %>
+          </li>
+        </ul>
+      <% end %>
       </div>
     </div>
   </div>
