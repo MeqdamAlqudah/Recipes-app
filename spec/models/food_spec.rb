@@ -4,7 +4,8 @@ require 'rails_helper'
 # validation of all attributes
 
 RSpec.describe Food, type: :model do
-  let(:food) { create(:food) }
+  let(:user) { create(:user) }
+  let(:food) { create(:food, user_id: user.id) }
   describe 'Attributes' do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:measurement_unit) }
