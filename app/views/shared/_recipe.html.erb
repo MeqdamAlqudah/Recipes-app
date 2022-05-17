@@ -1,7 +1,7 @@
 <li class="row border bg-primary p-3">
   <div class="col-3 d-flex flex-column gap-3">
     <h3> <%= recipe.name %> </h3>
-    <button type="button" class="btn btn-danger p-1 w-25"> Remove </button>
+    <%= button_to "Remove", "/recipes/#{recipe.id}", class: "btn btn-danger p-1 w-25", method: :delete %>
   </div>
   <p class="col-9">  <%= recipe.description %>  </p>
 </li>

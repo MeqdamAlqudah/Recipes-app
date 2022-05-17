@@ -18,12 +18,25 @@ class RecipesController < ApplicationController
       flash[:notice] = 'Recipe was successfully created'
       redirect_to recipes_path
     else
+      if @recipe.errors.any?
+        @recipe.errors.full_messages.each do |message|
+          render :json => { error: message } and return
+        end
+      end
       flash[:notice] = 'An error has occurred while creating the recipe'
       redirect_to new_recipe_path
     end
   end
 
-  def destroy; end
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    if @recipe.destroy
+      flash[:notice] = 'Recipe was successfully removed'
+    else
+      flash[:notice] = 'An error has occurred while deleting the recipe'
+    end
+    redirect_to recipes_path
+  end
 
   private
 
