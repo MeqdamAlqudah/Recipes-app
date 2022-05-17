@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Recipes', type: :request do
+  let(:user) { create(:user) }
+  before(:example) { login_as user }
+
   describe 'GET /index' do
-    before(:example) { get '/recipes' }
+    before(:example) { get('/recipes') }
     it 'returns http success' do
       expect(response).to have_http_status(:success)
     end
@@ -10,7 +13,7 @@ RSpec.describe 'Recipes', type: :request do
       expect(response).to render_template(:index)
     end
     it 'body should have remove button text' do
-      expect(response.body).to include 'Remove'
+      expect(response.body).to include 'Recipes'
     end
   end
 

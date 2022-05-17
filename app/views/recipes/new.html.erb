@@ -21,6 +21,11 @@
       <%= f.text_area :description, size:"30x5"%>
     </div>
     <br />
+    <div class="field">
+      <%= f.check_box :public_recipe, {}, true, false %>
+      <%= f.label :public? %>
+    </div>
+    <br />
     <%= f.submit %>
   <% end %>
 </div>
