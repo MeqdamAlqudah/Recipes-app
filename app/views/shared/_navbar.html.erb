@@ -8,11 +8,14 @@
       </ul>
       <div class="d-flex flex-row">
       <% if user_signed_in? %>
+        <%= link_to "New Recipe", new_recipe_path, class: "btn btn-dark" %>
         <div class="nav-item dropdown">
           <span class="nav-link dropdown-toggle text-dark" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</span>
           <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
             <li>Foods</li>
-            <li>Recipes</li>
+            <li>
+              <%= link_to "Recipes", recipes_path %>
+            </li>
             <li>
               <%= button_to "Sign out", destroy_user_session_path, class: "text-danger", method: :delete %>
             </li>
