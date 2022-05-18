@@ -15,7 +15,11 @@
     <header>
       <%= render "shared/navbar" %>
     </header>
-    <p class="notice"> <%= notice %> </p>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
