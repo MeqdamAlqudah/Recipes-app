@@ -1,0 +1,7 @@
+<li class="d-flex justify-content-between">
+  <p><%= food.name %></p>
+  <%= form_with model: @recipe_food, url: new_ingredient_recipe_path(params[:id], food.id) do |f| %>
+    <%= f.number_field :quantity, placeholder: "Quantity(#{food.measurement_unit})", required: true %>
+    <%= f.submit "Add", class: "btn btn-primary" %>
+  <% end %>
+</li>

@@ -1,5 +1,5 @@
 <div class="recipe-details-cont container">
-  <h1 class="pt-4 text-center"><%= @recipe.name %> </h1>
+  <h3 class="pt-4 text-center"><%= @recipe.name %> </h3>
   <ul class="recipe-details list-unstyled">
     <li>
       Preparation time: <%= pluralize(@recipe.preparation_time, 'hour') %>
@@ -11,8 +11,10 @@
   </ul>
 
   <div class="d-flex justify-content-between mt-5">
-    <button>Generate shopping list</button>
-    <button>Add ingredient</button>
+    <button class="btn btn-primary">Generate shopping list</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Add ingredient
+    </button>
   </div>
   <hr>
   <table class="table table-striped table-bordered mt-5">
@@ -30,4 +32,26 @@
     <% end %>
   </tbody>
 </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="staticBackdropLabel">Available Ingredients</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <ul class="modal-body d-flex flex-column gap-3">
+        <% @foods.each do |food| %>
+          <% unless @recipe_foods.include?(food) %>
+            <%= render "shared/ingredient", food: food %>
+          <% end %>
+        <% end %>
+      </ul>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

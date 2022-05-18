@@ -1,11 +1,3 @@
-html {
-  font-size: 62.5%;
-}
-
-.nav-font-sizes {
-  font-size: 2rem;
-}
-
 .recipe {
   text-decoration: none;
   color: white;
@@ -17,10 +9,10 @@ html {
 }
 
 .recipe-details-cont {
-  font-size: 2rem;
+  font-size: 20px;
 }
 
 .recipe-details {
-  margin-top: 10rem;
+  margin-top: 50px;
   font-weight: bold;
 }

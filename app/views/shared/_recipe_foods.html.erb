@@ -1,9 +1,13 @@
 <tr>
   <td><%= food.name %></td>
-  <td><%= "#{food.recipe_foods.first.quantity} #{food.measurement_unit}" %></td>
-  <td><%= "$ #{food.price}" %></td>
-  <td>
-    <a href="#">Modify</a>
-    <a href="#">Remove</a>
+  <td><%= "#{food.recipe_foods.where(recipe_id: @recipe.id).first.quantity} #{food.measurement_unit}" %></td>
+  <td><%= "$ #{food.price * food.recipe_foods.where(recipe_id: @recipe.id).first.quantity }" %></td>
+  <td class="d-flex justify-content-around">
+    <button class="btn btn-info">Modify</button>
+    <%= button_to "Remove",
+      recipe_food_path(food.recipe_foods.where(recipe_id: @recipe.id).first.id),
+      method: :delete,
+      class: "btn btn-danger"
+    %>
   </td>
 </tr>

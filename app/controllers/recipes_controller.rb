@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @recipe_foods = @recipe.foods
+    @foods = Food.all
   end
 
   def new
@@ -34,6 +35,11 @@ class RecipesController < ApplicationController
                        'An error has occurred while deleting the recipe'
                      end
     redirect_to recipes_path
+  end
+
+  def new_ingredients
+    RecipeFood.create!(quantity: params[:quantity], recipe_id: params[:id], food_id: params[:ingredient_id])
+    redirect_to recipe_path(params[:id])
   end
 
   private
