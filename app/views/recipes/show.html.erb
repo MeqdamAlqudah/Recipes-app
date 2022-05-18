@@ -8,11 +8,12 @@
       Cooking time: <%= pluralize(@recipe.cooking_time, 'hour') %>
     </li>
     <li> Steps go here...</li>
+    <li>Public: <%= @recipe.public_recipe %></li>
   </ul>
 
   <div class="d-flex justify-content-between mt-5">
     <button class="btn btn-primary">Generate shopping list</button>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addIngredients">
       Add ingredient
     </button>
   </div>
@@ -34,8 +35,8 @@
 </table>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Modal for adding an ingredient -->
+<div class="modal fade" id="addIngredients" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

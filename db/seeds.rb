@@ -61,7 +61,7 @@ recipes = [
     preparation_time: 0.5,
     cooking_time: 1.4,
     description: description,
-    public_recipe: true,
+    public_recipe: false,
     user_id: 1
   },
   {
@@ -69,7 +69,7 @@ recipes = [
     preparation_time: 1.0,
     cooking_time: 2.0,
     description: description,
-    public_recipe: true,
+    public_recipe: false,
     user_id: 1
   }
 ]
