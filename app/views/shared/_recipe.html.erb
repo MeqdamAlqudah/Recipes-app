@@ -1,11 +1,9 @@
 <li class=" border bg-primary p-3">
   <%= link_to recipe_path(recipe.id), class: "row recipe" do %>
-    <div class="col-3 d-flex flex-column gap-3">
-      <h3> <%= recipe.name %> </h3>
-      <%= button_to "Remove", "/recipes/#{recipe.id}", class: "btn btn-danger p-1 w-25", method: :delete %>
-    </div>
+    <h3 class="col-3"> <%= recipe.name %> </h3>
     <p class="col-9">  <%= recipe.description %>  </p>
   <% end %>
+  <%= button_to "Remove", "/recipes/#{recipe.id}", class: "btn btn-danger px-3", method: :delete %>
 </li>
 
 
