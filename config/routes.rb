@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :recipes, except: [:update] do
     member do
+      get 'recipe_status', to: 'recipes#recipe_status'
       post "ingredients/:ingredient_id", to: "recipes#new_ingredients", as: "new_ingredient"
     end
   end

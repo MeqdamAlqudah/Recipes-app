@@ -1,6 +1,16 @@
 <div class="recipe-details-cont container">
   <h3 class="pt-4 text-center"><%= @recipe.name %> </h3>
-  <ul class="recipe-details list-unstyled">
+  <ul class="recipe-details list-unstyled d-flex flex-column">
+    <li class="align-self-end">
+      <div class="form-check form-switch">
+        <% if @recipe.public_recipe? %>
+          <input class="form-check-input" type="checkbox" role="switch" checked id="flexSwitchCheckChecked" data-controller="recipe" data-recipe-id="<%= @recipe.id %>"/>
+        <% else %>
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" data-controller="recipe" data-recipe-id="<%= @recipe.id %>"/>
+        <% end %>
+        <label class="form-check-label" for="flexSwitchCheckChecked">Public</label>
+      </div>
+    </li>
     <li>
       Preparation time: <%= pluralize(@recipe.preparation_time, 'hour') %>
     </li>
