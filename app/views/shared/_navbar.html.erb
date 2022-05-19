@@ -17,6 +17,9 @@
               <%= link_to "Recipes", recipes_path %>
             </li>
             <li>
+              <%= link_to 'Public Recipes', public_recipes_path %>
+            </li>
+            <li>
               <%= button_to "Sign out", destroy_user_session_path, class: "text-danger", method: :delete %>
             </li>
           </ul>
