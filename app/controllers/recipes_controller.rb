@@ -6,7 +6,11 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all.where(user_id: current_user.id)
   end
 
-  def show; end
+  def show
+    @recipe = Recipe.find(params[:id])
+    @recipe_foods = @recipe.foods
+    @foods = Food.all
+  end
 
   def new
     @recipe = Recipe.new
@@ -31,6 +35,16 @@ class RecipesController < ApplicationController
                        'An error has occurred while deleting the recipe'
                      end
     redirect_to recipes_path
+  end
+
+  def new_ingredients
+    RecipeFood.create!(quantity: params[:quantity], recipe_id: params[:id], food_id: params[:ingredient_id])
+    redirect_to recipe_path(params[:id])
+  end
+
+  def recipe_status
+    @recipe = Recipe.find(params[:id])
+    @recipe.update!(public_recipe: !@recipe.public_recipe)
   end
 
   private

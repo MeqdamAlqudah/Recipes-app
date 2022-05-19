@@ -1,6 +1,5 @@
 require 'rails_helper'
-# presence of all attributes
-# validation of all attributes
+
 RSpec.describe RecipeFood, type: :model do
   let(:user) { create(:user) }
   let(:recipe) { create(:recipe, user_id: user.id) }
@@ -10,7 +9,7 @@ RSpec.describe RecipeFood, type: :model do
   describe 'Attributes' do
     it { should validate_presence_of(:quantity) }
     it 'quantity must be string' do
-      expect(recipe_food.quantity).to be_kind_of(String)
+      expect(recipe_food.quantity).to be_kind_of(Integer)
     end
   end
 end

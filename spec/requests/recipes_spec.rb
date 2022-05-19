@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Recipes', type: :request do
   let(:user) { create(:user) }
+  let(:recipe) { create(:recipe, user_id: user.id) }
   before(:example) { login_as user }
 
   describe 'GET /index' do
@@ -18,9 +19,15 @@ RSpec.describe 'Recipes', type: :request do
   end
 
   describe 'GET /show' do
+    before(:example) { get("/recipes/#{recipe.id}") }
     it 'returns http success' do
-      get '/recipes/show'
       expect(response).to have_http_status(:success)
+    end
+    it 'renders the index template' do
+      expect(response).to render_template(:show)
+    end
+    it 'body should have remove button text' do
+      expect(response.body).to include 'Preparation time'
     end
   end
 
@@ -38,9 +45,9 @@ RSpec.describe 'Recipes', type: :request do
   end
 
   describe 'GET /destroy' do
+    before(:example) { delete("/recipes/#{recipe.id}") }
     it 'returns http success' do
-      get '/recipes/destroy'
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(:found)
     end
   end
 end
