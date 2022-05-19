@@ -77,4 +77,9 @@ group :test do
 end
 
 gem 'devise'
+<<<<<<< HEAD
 gem 'rails-controller-testing'
+=======
+
+gem 'rails-controller-testing'
+>>>>>>> 39a930b0cd852352ee1e97ce8690e69c03177d7c
