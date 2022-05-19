@@ -5,7 +5,7 @@ RSpec.describe 'GeneralShoppingLists', type: :request do
   before(:example) { login_as user }
 
   describe 'GET /index' do
-    before(:example) { get("/general_shopping_list") }
+    before(:example) { get('/general_shopping_list') }
     it 'returns http success' do
       expect(response).to have_http_status(:ok)
     end
