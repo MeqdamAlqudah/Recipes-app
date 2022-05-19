@@ -10,7 +10,7 @@ RSpec.describe RecipeFood, type: :model do
   describe 'Attributes' do
     it { should validate_presence_of(:quantity) }
     it 'quantity must be string' do
-      expect(recipe_food.quantity).to be_kind_of(String)
+      expect(recipe_food.quantity).to be_kind_of(Integer)
     end
   end
 end
