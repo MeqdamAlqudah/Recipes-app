@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       post "ingredients/:ingredient_id", to: "recipes#new_ingredients", as: "new_ingredient"
     end
   end
-  resources :recipe_foods, only: [:update, :destroy]
+  resources :recipe_foods, only: [:edit, :update, :destroy]
   delete '/recipe_foods/:id', to: 'recipe_foods#destroy', as: 'destroy_recipe_food'
   get '/public_recipes', to: 'public_recipes#index'
   get '/general_shopping_list', to: 'general_shopping_list#index'
