@@ -3,9 +3,9 @@
   <td><%= "#{food.recipe_foods.find_by(recipe_id: @recipe.id).quantity} #{food.measurement_unit}" %></td>
   <td><%= "$ #{food.price * food.recipe_foods.find_by(recipe_id: @recipe.id).quantity }" %></td>
   <td class="d-flex justify-content-around">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modifyIngredient<%= food.id %>">
-      Modify
-    </button>
+    <%= link_to 'Modify',
+      edit_recipe_food_path(food.recipe_foods.find_by(recipe_id: @recipe.id).id),  class: "btn btn-warning"
+    %>
     <%= button_to "Remove",
       destroy_recipe_food_path(food.recipe_foods.find_by(recipe_id: @recipe.id).id),
       method: :delete,
