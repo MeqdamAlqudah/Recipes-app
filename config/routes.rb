@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'public_recipes/index'
+  get 'general_shopping_list/index'
   devise_for :users
   get 'home/index'
   resources :recipes, except: [:update] do
@@ -10,6 +11,5 @@ Rails.application.routes.draw do
   end
   resources :recipe_foods, only: [:update, :destroy]
   delete '/recipe_foods/:id', to: 'recipe_foods#destroy', as: 'destroy_recipe_food'
-  get '/public_recipes', to: 'public_recipes#index'
   root "home#index"
 end
