@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :food do
-    name { 'MyString' }
-    measurement_unit { 'MyString' }
-    price { 1 }
+    sequence(:name) { |n| "foodItem#{n}" }
+    measurement_unit { 'g' }
+    price { 2 }
+    user_id { 1 }
   end
 end

@@ -1,0 +1,10 @@
+<li class="border public-recipe">
+  <div class="d-flex justify-content-between">
+    <h3><%= public_recipe.name %></h3>
+    <div>
+      <h4>Total food items: <%= public_recipe.total_food_items %> </h4>
+      <h4>Total price: $ <%= public_recipe.food_items_total_price %></h4>
+    </div>
+  </div>
+  <h5>By: <%= public_recipe.user.name %></h5>
+</li>
