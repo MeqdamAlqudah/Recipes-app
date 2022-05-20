@@ -4,7 +4,7 @@ class FoodsController < ApplicationController
   load_and_authorize_resource param_method: :food_params
 
   def index
-    @foods = Food.all
+    @foods = Food.all.includes([:user])
   end
 
   def new

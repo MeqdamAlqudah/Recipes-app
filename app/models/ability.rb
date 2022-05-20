@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    can :read, Food
+    can %i[read create], Food
     can %i[read create], Recipe
     return unless user.present?
 
