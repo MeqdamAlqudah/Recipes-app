@@ -1,6 +1,5 @@
 require 'rails_helper'
-# presence of all attributes
-# validation of all attributes
+
 RSpec.describe Recipe, type: :model do
   let(:user) { create(:user) }
   let(:recipe) { create(:recipe, user_id: user.id) }

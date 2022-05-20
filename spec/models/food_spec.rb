@@ -1,8 +1,5 @@
 require 'rails_helper'
 
-# presence of all attributes
-# validation of all attributes
-
 RSpec.describe Food, type: :model do
   let(:user) { create(:user) }
   let(:food) { create(:food, user_id: user.id) }
