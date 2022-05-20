@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   load_and_authorize_resource param_method: :recipe_params
 
   def index
-    @recipes = Recipe.all.where(:user_id => current_user.id)
+    @recipes = Recipe.all.where(user_id: current_user.id)
   end
 
   def show
