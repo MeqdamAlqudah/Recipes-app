@@ -1,0 +1,8 @@
+<div class="container">
+  <h1 class="text-center mt-5"> Public Recipes </h1>
+  <ul class="d-flex flex-column list-unstyled gap-3">
+    <% @public_recipes.each do |public_recipe| %>
+      <%= render "shared/public_recipe", public_recipe: public_recipe %>
+    <% end %>
+  </ul>
+</div>
