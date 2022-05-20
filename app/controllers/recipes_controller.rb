@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recipes = Recipe.all.where(user_id: current_user.id)
+    @recipes = Recipe.all
   end
 
   def show
