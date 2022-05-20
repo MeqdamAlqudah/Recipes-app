@@ -1,0 +1,6 @@
+<h3 class="text-center"> Foods</h3>
+<ul class="container list-unstyled text-light">
+  <% @foods.each do |food| %>
+    <%= render "shared/food", food: food %>
+  <% end %>
+</ul>

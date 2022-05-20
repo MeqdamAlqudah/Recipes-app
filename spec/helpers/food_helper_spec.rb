@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 # Specs in this file have access to a helper object that includes
 # the FoodHelper. For example:
 #
@@ -12,4 +11,7 @@ require 'rails_helper'
 # end
 RSpec.describe FoodHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
+  it 'suppose nothing' do
+    expect(1).to eq(1)
+  end
 end

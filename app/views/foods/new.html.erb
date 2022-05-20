@@ -1,2 +1,21 @@
-<div>new path
-<button>New Food</button></div>
+<div class="container">
+  <h4>Add Food</h4>
+  <%= form_with model: @food, url: foods_path	 do |f| %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <br />
+    <div class="field">
+      <%= f.label :measurement_unit %><br />
+      <%= f.text_field :measurement_unit %>
+    </div>
+    <br />
+    <div class="field">
+      <%= f.label :price %><br />
+      <%= f.text_field :price %>
+    </div>
+    <br />
+    <%= f.submit %>
+  <% end %>
+</div> 
