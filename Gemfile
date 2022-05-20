@@ -81,3 +81,5 @@ gem 'devise'
 gem 'rails-controller-testing'
 
 gem 'table_print', '~> 1.5'
+
+gem 'cancancan'

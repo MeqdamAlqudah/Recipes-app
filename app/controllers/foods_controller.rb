@@ -1,9 +1,10 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!
   before_action :create_food, only: [:create]
+  load_and_authorize_resource param_method: :food_params
 
   def index
-    @foods = Food.all.where(user_id: current_user.id)
+    @foods = Food.all
   end
 
   def new
