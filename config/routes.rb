@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   end
   resources :recipe_foods, only: [:update, :destroy]
   delete '/recipe_foods/:id', to: 'recipe_foods#destroy', as: 'destroy_recipe_food'
+  get '/public_recipes', to: 'public_recipes#index'
+  get '/general_shopping_list', to: 'general_shopping_list#index'
   root "home#index"
 end
