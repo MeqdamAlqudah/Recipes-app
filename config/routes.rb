@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'general_shopping_list/index'
   devise_for :users
   get 'home/index'
+  resources :foods, only: [:index, :new, :create, :destroy]
   resources :recipes, except: [:update] do
     member do
       get 'recipe_status', to: 'recipes#recipe_status'
