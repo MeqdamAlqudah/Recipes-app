@@ -8,6 +8,6 @@ class Ability
     return unless user.present?
 
     can :destroy, Food, user: user
-    can :manage, Recipe, user:
+    can :manage, Recipe, user: user
   end
 end
