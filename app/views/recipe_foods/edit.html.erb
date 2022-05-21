@@ -1,0 +1,14 @@
+<div class="container text-center">
+  <h4>
+    Modifying <%= @recipe_food.food.name %> for <%= @recipe_food.recipe.name %>
+  </h4>
+  <br>
+  <%= form_with model: @recipe_food, url: recipe_food_path(@recipe_food.id) do |f| %>
+    <div class="field">
+      <%= f.label :quantity %><br />
+      <%= f.text_field :quantity %>
+    </div>
+    <br />
+    <%= f.submit %>
+  <% end %>
+</div>

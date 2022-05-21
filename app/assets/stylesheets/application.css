@@ -1,0 +1,22 @@
+.recipe {
+  text-decoration: none;
+  color: white;
+}
+
+.recipe:active,
+.recipe:hover {
+  color: white;
+}
+
+.recipe-details-cont {
+  font-size: 20px;
+}
+
+.recipe-details {
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+.public-recipe {
+  padding: 25px 100px;
+}

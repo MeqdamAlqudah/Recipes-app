@@ -1,56 +1,36 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Recipes App
 
-> Description the project.
+The Recipe app keeps track of all users recipes, ingredients, and inventory. It will allow them to save ingredients, keep track of what they have, create recipes, and generate a shopping list based on what they have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app allows usrs to make them public so anyone can access them.
 
+# Built with
 
-## Built With
+- Ruby
+- RoR
 
-- Major languages
-- Frameworks
-- Technologies used
+# Setup Instructions
 
-## Live Demo (if available)
+1. Clone this repository
+2. Run `bundle install` in the terminal
+3. Run `rails s` in the terminal
+4. Open the page using the URL http://127.0.0.1:3000
 
-[Live Demo Link](https://livedemo.com)
+## Author
 
+👤 **Adorn**
 
-## Getting Started
+- GitHub: [@AdornChoga](https://github.com/AdornChoga)
+- Twitter: [@adornchoga](https://twitter.com/adorn_choga)
+- LinkedIn: [@adornchoga](https://www.linkedin.com/in/adorn-choga)
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
+ 👤 **Meqdam Al-qudah**
+ 
+- [GitHub](https://github.com/MeqdamAlqudah)
+- [Twitter](https://twitter.com/MeqdamQudah)
+- [LinkedIn](www.linkedin.com/in/meqdam-al-qudah-7514a21b5)
 
 
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
@@ -61,13 +41,3 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.

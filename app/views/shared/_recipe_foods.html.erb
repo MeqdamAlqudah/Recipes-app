@@ -1,0 +1,38 @@
+<tr>
+  <td><%= food.name %></td>
+  <td><%= "#{food.recipe_foods.find_by(recipe_id: @recipe.id).quantity} #{food.measurement_unit}" %></td>
+  <td><%= "$ #{food.price * food.recipe_foods.find_by(recipe_id: @recipe.id).quantity }" %></td>
+  <td class="d-flex justify-content-around">
+    <%= link_to 'Modify',
+      edit_recipe_food_path(food.recipe_foods.find_by(recipe_id: @recipe.id).id),  class: "btn btn-warning"
+    %>
+    <%= button_to "Remove",
+      destroy_recipe_food_path(food.recipe_foods.find_by(recipe_id: @recipe.id).id),
+      method: :delete,
+      class: "btn btn-danger"
+    %>
+  </td>
+</tr>
+
+<!-- Modal for modifying an ingredient -->
+
+<div class="modal fade" id="modifyIngredient<%= food.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="staticBackdropLabel">Modifying <%= food.name %></h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column gap-3">
+        <%= form_with url: "/recipe_foods/#{food.recipe_foods.find_by(recipe_id: @recipe.id).id}", method: :patch  do |f| %>
+          <%= f.label :quantity %>
+          <%= f.number_field :quantity, value: food.recipe_foods.find_by(recipe_id: @recipe.id).quantity %>
+          <button type="submit" class="btn btn-warning" data-controller="refresh">Update</button>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
